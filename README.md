@@ -1,2 +1,16 @@
-# predictinggrowthrate
-# growthprediction
+Introduction: 
+In the past decade, there has been much research done in the field of genome-scale metabolic networks and a prime focus has been put into reconstructions of these particular networks. The data and information that has been generated can be used for prediction purposes and one such way to manipulate the reconstructions is through flux balance analysis. Flux balance analysis is used as a method to study biochemical networks and can predict how environment and genetics affect the behavior and phenotype of microorganisms such as Salmonella enterica. In this project, a subset of biochemical processes were selected for analysis and each reaction was individually deleted to see how it would affect growth. The COBRA (Constraint-Based Reconstruction and Analysis) toolbox on Matlab was then implemented to estimate the growth rate of the organism for each deletion. From this numerical data, the processes, which had had the largest effect on growth and metabolism, could then be identified.
+
+Cobra Toolbox Download: https://opencobra.github.io/cobratoolbox/stable/
+
+Methodology:
+The Matrix:
+The flux balance analysis model requires information on all known metabolic reactions and the genes that encode each enzyme in a matrix. FBA quantifies the flow of metabolites through the network, and this in turn statistically predicts the growth rate of an organism. A numerical matrix must be created with the appropriate stoichiometric coefficients of each reaction. The coefficients impose a constraint on the flow of metabolites and manipulating these values can give numerical foresight into how the organism would fair in different conditions. These constraints also ensure that the system is in steady state and that the amount of compound being produced is equal to the amount of compound being consumed.
+
+The Biological Objective:
+In order to predict growth in S. enterica, the objective function must be designed to optimize biomass production. A mathematic biomass reaction must be included in the matrix and the stoichiometric values must be based on experimentally determined values that ensure yield of biomass components. Here, the reaction’s flux is equal to the exponential growth rate of the organism, so the toolbox attempts to calculate the maximum flux through the biomass reaction. The COBRA toolbox practices linear programming for predictive modeling by solving for the individual equations with an intrinsic algorithm. Optimization is a method of measuring internal flux within the network. It is also important to reprogram the metabolic network to see how different situations will yield alternative results. Dynamic FBA is a way to simulate growth of a bacterium and testing the results can validate those results and framework against published experimental data. It takes into account the rate of change of flux balance constraints.
+
+Establishing the model with a known dataset:
+In order to establish a growth prediction framework, the model must first be test with data, which has previously been analyzed. The first dataset was taken from the Systems Biology Markup Language database and had been used for growth prediction. A matrix was used with 1,802 metabolites and 2,546 reactions and their corresponding stoichiometric coefficients. The matrix, which was denoted as S, is visually represented in Figure 1 to display all the non-zero values. The percentage of non-zero entries was calculated to be 0.2138%, which is typical of a large dataset.
+
+
