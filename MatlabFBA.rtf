@@ -4,7 +4,7 @@ initCobraToolbox;
 changeCobraSolver('glpk','all');
 %ModelSetup
 global CBTDIR
-modelFileName = 'STM_v1.0.xml';
+modelFileName = 'Dataset1.xml';
 modelDirectory = getDistributedModelFolder(modelFileName); 
 modelFileName= [modelDirectory filesep modelFileName];
 model = readCbModel(modelFileName);
